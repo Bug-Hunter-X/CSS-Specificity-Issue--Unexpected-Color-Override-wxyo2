@@ -1,0 +1,35 @@
+The solution involves understanding and correctly applying CSS specificity:
+
+**Option 1:  Adjusting Specificity**
+
+If the intent is to have `color: red` applied universally, remove the more specific selector:
+
+```css
+p {
+  color: red; 
+}
+```
+
+**Option 2:  Using !important (Less Recommended)**
+
+Using `!important` is generally discouraged because it can lead to difficult-to-debug conflicts, but it can override specificity:
+
+```css
+div p {
+  color: blue;
+}
+
+p {
+  color: red !important; 
+}
+```
+
+**Option 3:  Adding a more specific selector (more specific than `div p`):**
+
+If the `color: blue` is the intended behavior, leave the selector as is. Or, add a more specific selector that takes precedence.
+
+```css
+div.container p{
+ color:blue
+}
+```
